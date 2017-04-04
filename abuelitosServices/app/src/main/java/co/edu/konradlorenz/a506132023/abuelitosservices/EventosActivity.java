@@ -1,13 +1,13 @@
 package co.edu.konradlorenz.a506132023.abuelitosservices;
 
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,35 +20,29 @@ import java.util.List;
 
 public class EventosActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.NavBot);
-
-        //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-          //  @Override
-            //public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-              //  if(item.getItemId() == R.id.itemEvento){
-                //    Intent intent1 = new Intent(EventosActivity.this, EventosActivity.class);
-                  //  startActivity(intent1);
-                //}else if (item.getItemId() == R.id.itemMapa){
-                  //  Intent intent2 = new Intent(EventosActivity.this, MapsActivity.class);
-                    //startActivity(intent2);
-                //}else if (item.getItemId() == R.id.itemForo){
-                  //  Intent intent3 = new Intent(EventosActivity.this, foroActivity.class);
-                    //startActivity(intent3);
-                //}
-                //return false;
-            //}
-        //});
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.containerEvento, new PlaceholderFragment())
+                    .add(R.id.containerForo, new EventosActivity.PlaceholderFragment())
                     .commit();
         }
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.NavBot);
+//Attach the listener
+//Attach the listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        selectFragment(item);
+                        return true;
+                    }
+                });
     }
 
     public static class PlaceholderFragment extends Fragment {
@@ -97,6 +91,44 @@ public class EventosActivity extends AppCompatActivity {
             listView.setAdapter(mForecastAdapter);
 
             return rootView;
+        }
+    }
+    /**
+     * Perform action when any item is selected.
+     *
+     * @param item Item that is selected.
+     */
+    protected void selectFragment(MenuItem item) {
+
+        item.setChecked(true);
+
+        switch (item.getItemId()) {
+            case R.id.itemForo:
+                pushFragment(new foroActivity.PlaceholderFragment());
+                break;
+            case R.id.itemEvento:
+                // Action to perform when Bag Menu item is selected.
+                pushFragment(new EventosActivity.PlaceholderFragment());
+                break;
+        }
+    }
+
+    /**
+     * Method to push any fragment into given id.
+     *
+     * @param fragment An instance of Fragment to show into the given id.
+     */
+    protected void pushFragment(Fragment fragment) {
+        if (fragment == null)
+            return;
+
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager != null) {
+            android.app.FragmentTransaction ft = fragmentManager.beginTransaction();
+            if (ft != null) {
+
+                ft.commit();
+            }
         }
     }
 }
