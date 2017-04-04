@@ -8,28 +8,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:id="@+id/FirtsFragment"
-    tools:context=".foroActivity$PlaceholderFragment">
+    tools:context=".TemaActivity$PlaceholderFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Foro"
-        android:id="@+id/textforo"
+        android:text="Tema:
+         conversacion iniciada por un usuario"
+        android:id="@+id/texttema"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <android.support.design.widget.BottomNavigationView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NavBot"
-        android:layout_gravity="bottom"
-        desing:menu="@menu/menu_navigation"
-        />
-
     <ListView
-        android:id="@+id/listview_foro"
+        android:id="@+id/listview_tema"
         android:layout_width="match_parent"
         android:layout_margin="17dp"
-        android:layout_height="415dp" />
+        android:layout_height="414dp"
+        android:layout_gravity="bottom"
+        />
 
 </FrameLayout>

@@ -1,5 +1,6 @@
 package co.edu.konradlorenz.a506132023.abuelitosservices;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -23,11 +25,20 @@ import static android.R.string.no;
 public class foroActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-
+    Button btn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foro);
+       // btn1 = (Button) findViewById(R.id.detalleButton);
+        //btn1.setOnClickListener(new View.OnClickListener() {
+            //@Override
+           // public void onClick(View v) {
+          //      Intent intent = new Intent(foroActivity.this, TemaActivity.class);
+            //    startActivity(intent);
+            //}
+
+        //});
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.NavBot);
 
         //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,14 +60,14 @@ public class foroActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.containerForo, new EventosActivity.PlaceholderFragment())
+                    .add(R.id.containerForo, new foroActivity.PlaceholderFragment())
                     .commit();
         }
     }
 
     public static class PlaceholderFragment extends Fragment {
 
-        ArrayAdapter<String> mForecastAdapter;
+        ArrayAdapter<String> foroAdapter;
 
         public PlaceholderFragment() {
         }
@@ -78,24 +89,24 @@ public class foroActivity extends AppCompatActivity {
                     "comentarios y duduas de los usuarios"
 
             };
-            List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
+            List<String> foroLista = new ArrayList<String>(Arrays.asList(data));
 
 
             // Now that we have some dummy forecast data, create an ArrayAdapter.
             // The ArrayAdapter will take data from a source (like our dummy forecast) and
             // use it to populate the ListView it's attached to.
-            mForecastAdapter =
+            foroAdapter =
                     new ArrayAdapter<String>(
                             getActivity(), // The current context (this activity)
                             R.layout.list_item_foro, // The name of the layout ID.
                             R.id.list_item_foro_textview, // The ID of the textview to populate.
-                            weekForecast);
+                            foroLista);
 
             View rootView = inflater.inflate(R.layout.fragment_foro, container, false);
 
             // Get a reference to the ListView, and attach this adapter to it.
             ListView listView = (ListView) rootView.findViewById(R.id.listview_foro);
-            listView.setAdapter(mForecastAdapter);
+            listView.setAdapter(foroAdapter);
 
             return rootView;
         }

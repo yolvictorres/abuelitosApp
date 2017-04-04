@@ -40,7 +40,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".AgregarEventoActivity"></activity>
+        <activity android:name=".AgregarEventoActivity" />
+        <activity android:name=".TemaActivity"></activity>
     </application>
 
 </manifest>
