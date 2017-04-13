@@ -32,9 +32,8 @@ public class EventosActivity extends AppCompatActivity {
                     .commit();
         }
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.NavBot);
-//Attach the listener
-//Attach the listener
+                findViewById(R.id.navigation);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override

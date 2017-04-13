@@ -26,7 +26,8 @@ public class foroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foro);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.NavBot);
+        //bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+
 
         //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
         //  @Override

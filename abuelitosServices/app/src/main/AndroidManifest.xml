@@ -46,9 +46,9 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".PruebaActivity"
+            android:name=".MenuActivity"
             android:exported="true"
-            android:label="@string/title_activity_prueba" />
+            android:label="@string/title_activity_menu" />
     </application>
 
 </manifest>
