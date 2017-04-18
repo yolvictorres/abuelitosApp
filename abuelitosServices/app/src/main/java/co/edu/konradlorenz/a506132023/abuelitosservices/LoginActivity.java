@@ -27,10 +27,14 @@ Button btn1,btn2;
             @Override
             public void onClick(View v) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Intent intent2 = new Intent(LoginActivity.this,EventosActivity.class);
 =======
                 Intent intent2 = new Intent(LoginActivity.this,MenuActivity.class);
 >>>>>>> 14887f5504d989a4b1b4d606772f4c877f51baf0
+=======
+                Intent intent2 = new Intent(LoginActivity.this,foroActivity.class);
+>>>>>>> parent of 20c88fe... Modification intent in LoginActivity
                 startActivity(intent2);
             }
 
