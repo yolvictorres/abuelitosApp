@@ -6,4 +6,8 @@
     <string name="registrarse">Registrarse</string>
     <string name="title_activity_maps">Map</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_menu">AbuelitosServices</string>
+    <string name="title_home">Eventos</string>
+    <string name="title_dashboard">Foro</string>
+    <string name="title_notifications">Mapa</string>
 </resources>

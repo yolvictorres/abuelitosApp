@@ -17,19 +17,12 @@
         android:id="@+id/textforo"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <android.support.design.widget.BottomNavigationView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NavBot"
-        android:layout_gravity="bottom"
-        desing:menu="@menu/menu_navigation"
-        />
 
     <ListView
         android:id="@+id/listview_foro"
         android:layout_width="match_parent"
-        android:layout_margin="17dp"
-        android:layout_height="415dp" />
+        android:layout_height="392dp"
+        android:layout_margin="17dp" />
+
 
 </FrameLayout>
