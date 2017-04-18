@@ -1,10 +1,12 @@
 package co.edu.konradlorenz.a506132023.abuelitosservices;
 
-<<<<<<< HEAD
+import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 =======
 import android.app.FragmentManager;
->>>>>>> 14887f5504d989a4b1b4d606772f4c877f51baf0
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -31,22 +33,6 @@ public class foroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foro);
-<<<<<<< HEAD
-       // btn1 = (Button) findViewById(R.id.detalleButton);
-        //btn1.setOnClickListener(new View.OnClickListener() {
-            //@Override
-           // public void onClick(View v) {
-          //      Intent intent = new Intent(foroActivity.this, TemaActivity.class);
-            //    startActivity(intent);
-            //}
-
-        //});
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.NavBot);
-=======
-        //bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
-
->>>>>>> 14887f5504d989a4b1b4d606772f4c877f51baf0
-
         //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
         //  @Override
         //public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -122,6 +108,7 @@ public class foroActivity extends AppCompatActivity {
      *
      * @param item Item that is selected.
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     protected void selectFragment(MenuItem item) {
 
         item.setChecked(true);
@@ -142,6 +129,7 @@ public class foroActivity extends AppCompatActivity {
      *
      * @param fragment An instance of Fragment to show into the given id.
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     protected void pushFragment(Fragment fragment) {
         if (fragment == null)
             return;
