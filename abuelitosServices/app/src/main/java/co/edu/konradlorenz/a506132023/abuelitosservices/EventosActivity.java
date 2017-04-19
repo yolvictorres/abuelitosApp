@@ -46,7 +46,7 @@ public class EventosActivity extends AppCompatActivity {
 
     public static class PlaceholderFragment extends Fragment {
 
-        ArrayAdapter<String> mForecastAdapter;
+        ArrayAdapter<String> eventoAdapter;
 
         public PlaceholderFragment() {
         }
@@ -70,24 +70,24 @@ public class EventosActivity extends AppCompatActivity {
                     "informacion de los eventos publicador"
 
             };
-            List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
+            List<String> eventoLista = new ArrayList<String>(Arrays.asList(data));
 
 
             // Now that we have some dummy forecast data, create an ArrayAdapter.
             // The ArrayAdapter will take data from a source (like our dummy forecast) and
             // use it to populate the ListView it's attached to.
-            mForecastAdapter =
+            eventoAdapter =
                     new ArrayAdapter<String>(
                             getActivity(), // The current context (this activity)
                             R.layout.list_item_evento, // The name of the layout ID.
                             R.id.list_item_evento_textview, // The ID of the textview to populate.
-                            weekForecast);
+                            eventoLista);
 
             View rootView = inflater.inflate(R.layout.fragment_evento, container, false);
 
             // Get a reference to the ListView, and attach this adapter to it.
             ListView listView = (ListView) rootView.findViewById(R.id.listview_evento);
-            listView.setAdapter(mForecastAdapter);
+            listView.setAdapter(eventoAdapter);
 
             return rootView;
         }

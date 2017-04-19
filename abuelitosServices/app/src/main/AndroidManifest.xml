@@ -49,6 +49,7 @@
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu" />
+        <activity android:name=".TemaActivity"></activity>
     </application>
 
 </manifest>

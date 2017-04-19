@@ -26,36 +26,17 @@ public class foroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foro);
-        //bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
-
-
-        //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-        //  @Override
-        //public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        //  if(item.getItemId() == R.id.itemEvento){
-        //    Intent intent1 = new Intent(EventosActivity.this, EventosActivity.class);
-        //  startActivity(intent1);
-        //}else if (item.getItemId() == R.id.itemMapa){
-        //  Intent intent2 = new Intent(EventosActivity.this, MapsActivity.class);
-        //startActivity(intent2);
-        //}else if (item.getItemId() == R.id.itemForo){
-        //  Intent intent3 = new Intent(EventosActivity.this, foroActivity.class);
-        //startActivity(intent3);
-        //}
-        //return false;
-        //}
-        //});
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.containerForo, new EventosActivity.PlaceholderFragment())
+                    .add(R.id.containerForo, new foroActivity.PlaceholderFragment())
                     .commit();
         }
     }
 
     public static class PlaceholderFragment extends Fragment {
 
-        ArrayAdapter<String> mForecastAdapter;
+        ArrayAdapter<String> foroAdapter;
 
         public PlaceholderFragment() {
         }
@@ -77,24 +58,24 @@ public class foroActivity extends AppCompatActivity {
                     "comentarios y dudas de los usuarios"
 
             };
-            List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
+            List<String> foroLista = new ArrayList<String>(Arrays.asList(data));
 
 
             // Now that we have some dummy forecast data, create an ArrayAdapter.
             // The ArrayAdapter will take data from a source (like our dummy forecast) and
             // use it to populate the ListView it's attached to.
-            mForecastAdapter =
+            foroAdapter =
                     new ArrayAdapter<String>(
                             getActivity(), // The current context (this activity)
                             R.layout.list_item_foro, // The name of the layout ID.
                             R.id.list_item_foro_textview, // The ID of the textview to populate.
-                            weekForecast);
+                            foroLista);
 
             View rootView = inflater.inflate(R.layout.fragment_foro, container, false);
 
             // Get a reference to the ListView, and attach this adapter to it.
             ListView listView = (ListView) rootView.findViewById(R.id.listview_foro);
-            listView.setAdapter(mForecastAdapter);
+            listView.setAdapter(foroAdapter);
 
             return rootView;
         }

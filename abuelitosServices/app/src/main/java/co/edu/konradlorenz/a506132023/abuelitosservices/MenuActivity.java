@@ -38,7 +38,6 @@ public class MenuActivity extends AppCompatActivity {
                     fragNavController.switchTab(TAB_SECOND);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;
