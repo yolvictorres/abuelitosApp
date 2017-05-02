@@ -26,11 +26,7 @@ Button btn1,btn2;
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                Intent intent2 = new Intent(LoginActivity.this,EventosActivity.class);
-=======
                 Intent intent2 = new Intent(LoginActivity.this,MenuActivity.class);
->>>>>>> 14887f5504d989a4b1b4d606772f4c877f51baf0
                 startActivity(intent2);
             }
 

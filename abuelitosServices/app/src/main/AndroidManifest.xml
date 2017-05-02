@@ -45,15 +45,12 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-<<<<<<< HEAD
         <activity android:name=".AgregarEventoActivity" />
         <activity android:name=".TemaActivity"></activity>
-=======
         <activity
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu" />
->>>>>>> 14887f5504d989a4b1b4d606772f4c877f51baf0
     </application>
 
 </manifest>

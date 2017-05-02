@@ -5,7 +5,6 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
-=======
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
