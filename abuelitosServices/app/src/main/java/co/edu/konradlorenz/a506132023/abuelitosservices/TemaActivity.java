@@ -1,9 +1,8 @@
 package co.edu.konradlorenz.a506132023.abuelitosservices;
 
-import android.app.Activity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +18,13 @@ public class TemaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tema);
+        //setContentView(R.layout.activity_tema);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.containerTema, new TemaActivity.PlaceholderFragment())
                     .commit();
         }
     }
-
     public static class PlaceholderFragment extends Fragment {
 
         ArrayAdapter<String> temaAdapter;

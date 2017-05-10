@@ -2,7 +2,9 @@ package co.edu.konradlorenz.a506132023.abuelitosservices;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,11 +24,11 @@ public class foroActivity extends AppCompatActivity {
     private Intent intent;
     private BottomNavigationView mBottomBar;
     private BottomNavigationView bottomNavigationView;
-
+    Button btn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foro);
+        //setContentView(R.layout.activity_foro);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -85,6 +88,7 @@ public class foroActivity extends AppCompatActivity {
      *
      * @param item Item that is selected.
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     protected void selectFragment(MenuItem item) {
 
         item.setChecked(true);
@@ -97,6 +101,9 @@ public class foroActivity extends AppCompatActivity {
                 // Action to perform when Bag Menu item is selected.
                 pushFragment(new EventosActivity.PlaceholderFragment());
                 break;
+            case R.id.itemMapa:
+                pushFragment(new MapsActivity.PlaceholderFragment());
+                break;
         }
     }
 
@@ -105,6 +112,7 @@ public class foroActivity extends AppCompatActivity {
      *
      * @param fragment An instance of Fragment to show into the given id.
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     protected void pushFragment(Fragment fragment) {
         if (fragment == null)
             return;
