@@ -5,7 +5,12 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
+<<<<<<< HEAD
             <param-value>com.example.Diego.myapplication.backend.MyEndpoint</param-value>
+=======
+            <param-value>com.example.Diego.myapplication.backend.MyEndpoint,
+                com.example.Diego.myapplication.backend.UserEndpoint</param-value>
+>>>>>>> 9cc3fd0ce56cf19790cfedaa4bd86778fafe793c
         </init-param>
     </servlet>
     <servlet-mapping>

@@ -1,4 +1,4 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/containerTema"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context="co.edu.konradlorenz.a506132023.abuelitosservices.TemaActivity" tools:ignore="MergeRootFrame" />
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/containerTema"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".TemaActivity" tools:ignore="MergeRootFrame" />

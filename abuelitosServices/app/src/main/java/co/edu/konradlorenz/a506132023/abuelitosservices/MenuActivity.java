@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
                     fragNavController.switchTab(TAB_SECOND);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    fragNavController.switchTab(TAB_THIRD);
                     return true;
             }
             return false;
@@ -56,15 +56,15 @@ public class MenuActivity extends AppCompatActivity {
 
         fragments.add(new EventosActivity.PlaceholderFragment());
         fragments.add(new foroActivity.PlaceholderFragment());
+        fragments.add(new MapsActivity.PlaceholderFragment());
 
         //link fragments to container
         fragNavController = new FragNavController(getSupportFragmentManager(),R.id.container,fragments);
         //End of FragNav
 
-        mTextMessage = (TextView) findViewById(R.id.text12);
+        //mTextMessage = (TextView) findViewById(R.id.text12);
         fragNavController.switchTab(TAB_FIRST);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
 }

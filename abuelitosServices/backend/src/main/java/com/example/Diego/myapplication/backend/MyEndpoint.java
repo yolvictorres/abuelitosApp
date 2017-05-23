@@ -16,7 +16,7 @@ import javax.inject.Named;
  * An endpoint class we are exposing
  */
 @Api(
-        name = "myApi",
+        name = "uApi",
         version = "v1",
         namespace = @ApiNamespace(
                 ownerDomain = "backend.myapplication.Diego.example.com",
@@ -33,8 +33,6 @@ public class MyEndpoint {
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
-
         return response;
     }
-
 }

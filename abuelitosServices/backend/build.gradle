@@ -28,6 +28,11 @@ dependencies {
     compile 'javax.servlet:servlet-api:2.5'
     compile 'com.googlecode.objectify:objectify:5.0.3'
     compile 'com.ganyo:gcm-server:1.0.2'
+
+    compile (group: 'org.jsoup' , name: 'jsoup' , version: '1.8.3') {
+        exclude module: 'org.apache.httpcomponents:httpclient'
+    }
+
 }
 
 appengine {

@@ -25,10 +25,10 @@ public class EventosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eventos);
+        //setContentView(R.layout.activity_eventos);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.containerForo, new EventosActivity.PlaceholderFragment())
+                    .add(R.id.containerEvento, new EventosActivity.PlaceholderFragment())
                     .commit();
         }
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
@@ -109,6 +109,10 @@ public class EventosActivity extends AppCompatActivity {
                 // Action to perform when Bag Menu item is selected.
                 pushFragment(new EventosActivity.PlaceholderFragment());
                 break;
+            case R.id.itemMapa:
+                pushFragment(new MapsActivity.PlaceholderFragment());
+                break;
+
         }
     }
 

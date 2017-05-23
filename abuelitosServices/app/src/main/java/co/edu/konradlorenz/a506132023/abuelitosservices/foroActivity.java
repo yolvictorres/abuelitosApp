@@ -1,13 +1,10 @@
 package co.edu.konradlorenz.a506132023.abuelitosservices;
 
-import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -31,23 +28,7 @@ public class foroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foro);
-        //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-        //  @Override
-        //public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        //  if(item.getItemId() == R.id.itemEvento){
-        //    Intent intent1 = new Intent(EventosActivity.this, EventosActivity.class);
-        //  startActivity(intent1);
-        //}else if (item.getItemId() == R.id.itemMapa){
-        //  Intent intent2 = new Intent(EventosActivity.this, MapsActivity.class);
-        //startActivity(intent2);
-        //}else if (item.getItemId() == R.id.itemForo){
-        //  Intent intent3 = new Intent(EventosActivity.this, foroActivity.class);
-        //startActivity(intent3);
-        //}
-        //return false;
-        //}
-        //});
+        //setContentView(R.layout.activity_foro);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -119,6 +100,9 @@ public class foroActivity extends AppCompatActivity {
             case R.id.itemEvento:
                 // Action to perform when Bag Menu item is selected.
                 pushFragment(new EventosActivity.PlaceholderFragment());
+                break;
+            case R.id.itemMapa:
+                pushFragment(new MapsActivity.PlaceholderFragment());
                 break;
         }
     }
