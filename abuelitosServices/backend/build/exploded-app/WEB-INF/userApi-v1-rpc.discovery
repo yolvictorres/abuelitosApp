@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/F6tfh2Cwjgakoyk05AdfxheSObo\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/SAugd4W69MFWvKH6UJgIBrK4XZM\"",
  "discoveryVersion": "v1",
  "id": "userApi:v1",
  "name": "userApi",
@@ -90,7 +90,13 @@
    "id": "User",
    "type": "object",
    "properties": {
+    "contrasena": {
+     "type": "string"
+    },
     "department": {
+     "type": "string"
+    },
+    "foto": {
      "type": "string"
     },
     "id": {
@@ -226,7 +232,13 @@
    "id": "userApi.patch",
    "supportsPatch": true,
    "parameters": {
+    "contrasena": {
+     "type": "string"
+    },
     "department": {
+     "type": "string"
+    },
+    "foto": {
      "type": "string"
     },
     "id": {

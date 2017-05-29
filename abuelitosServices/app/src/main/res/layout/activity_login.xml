@@ -11,7 +11,7 @@
     tools:context="co.edu.konradlorenz.a506132023.abuelitosservices.LoginActivity">
 
     <EditText
-        android:id="@+id/usuario"
+        android:id="@+id/identificacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -20,31 +20,31 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp" />
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textidentificacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="47dp"
-        android:text="@string/usuario"
-        android:layout_alignBottom="@+id/usuario"
-        android:layout_alignLeft="@+id/usuario"
-        android:layout_alignStart="@+id/usuario" />
+        android:text="identificacion"
+        android:layout_alignBottom="@+id/identificacion"
+        android:layout_alignLeft="@+id/identificacion"
+        android:layout_alignStart="@+id/identificacion" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/usuario"
-        android:layout_alignStart="@+id/usuario" />
+        android:layout_alignLeft="@+id/identificacion"
+        android:layout_alignStart="@+id/identificacion" />
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/editpass"
+        android:layout_alignStart="@+id/editpass"
+        android:layout_below="@+id/identificacion"
         android:layout_marginTop="38dp"
         android:text="@string/contraseña" />
 
@@ -53,9 +53,9 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="27dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText">
+        android:layout_below="@+id/editpass"
+        android:layout_alignLeft="@+id/editpass"
+        android:layout_alignStart="@+id/editpass">
 
         <Button
             android:id="@+id/btnIngresar"

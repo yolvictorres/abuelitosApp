@@ -17,8 +17,27 @@ public class User {
     private String id;
     private String name;
     private String lastName;
+    private String foto;
+    private String contrasena;
     @Index
     private String typePeople;
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
     @Index
     private String typeUser;
     @Index

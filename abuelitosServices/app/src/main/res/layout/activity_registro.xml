@@ -48,10 +48,10 @@
             android:id="@+id/nombreRegistro" />
 
         <TextView
-            android:text="cedula"
+            android:text="identificacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cedulatext" />
+            android:id="@+id/identificaciontext" />
 
         <EditText
             android:layout_width="match_parent"

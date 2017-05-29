@@ -53,6 +53,11 @@
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu" />
+        <provider
+            android:name=".data.DataProvider"
+            android:authorities="co.edu.konradlorenz.a506132023.abuelitosservices.provider"
+            android:exported="false" >
+        </provider>
     </application>
 
 </manifest>
