@@ -79,13 +79,11 @@
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu" />
-<<<<<<< HEAD
         <provider
             android:name=".data.DataProvider"
             android:authorities="co.edu.konradlorenz.a506132023.abuelitosservices.provider"
             android:exported="false" >
         </provider>
-=======
         <activity
             android:name=".pruebaActivity"
             android:exported="true"
@@ -98,7 +96,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AgregarForoActivity"></activity>
->>>>>>> da0870c7c0f8415b61beb8a54b7c0d7e7672058c
     </application>
 
 </manifest>

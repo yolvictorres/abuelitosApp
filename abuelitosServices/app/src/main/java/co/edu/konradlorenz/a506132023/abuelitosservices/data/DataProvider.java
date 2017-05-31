@@ -59,8 +59,8 @@ public class DataProvider extends ContentProvider {
     private static final UriMatcher uriMatcher;
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI("com.jiacp.smartcard.provider", "users", USERS_ALLROWS);
-        uriMatcher.addURI("com.jiacp.smartcard.provider", "users/#", USERS_SINGLE_ROW);
+        uriMatcher.addURI("co.edu.konradlorenz.a506132023.abuelitosservices.provider", "users", USERS_ALLROWS);
+        uriMatcher.addURI("co.edu.konradlorenz.a506132023.abuelitosservices.provider", "users/#", USERS_SINGLE_ROW);
         }
 
 
