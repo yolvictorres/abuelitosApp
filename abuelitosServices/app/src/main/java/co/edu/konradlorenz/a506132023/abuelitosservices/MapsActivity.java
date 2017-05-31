@@ -45,37 +45,8 @@ public class MapsActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-
     }
 
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_maps, container, false);
-        return mView;
-    }*/
-
-    /*@Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mMapView = (MapView) mView.findViewById(R.id.maps);
-        if(mMapView != null){
-            mMapView.onCreate(null);
-            mMapView.onResume();
-            mMapView.getMapAsync(this);
-
-        }
-    }*/
-
-    /*@Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-        // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }*/
     public static class PlaceholderFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback{
         private GoogleMap mMap;
         View mView;
@@ -105,9 +76,9 @@ public class MapsActivity extends AppCompatActivity {
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
             // Add a marker in Sydney, Australia, and move the camera.
-            LatLng sydney = new LatLng(-34, 151);
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng bogota = new LatLng(4.6513722, -74.5);
+            mMap.addMarker(new MarkerOptions().position(bogota).title("Marker in Bogota"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(bogota));
         }
     }
     /**

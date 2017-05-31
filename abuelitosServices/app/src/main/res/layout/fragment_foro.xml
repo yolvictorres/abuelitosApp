@@ -1,28 +1,23 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:desing="http://schemas.android.com/apk/res-auto"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:id="@+id/FirtsFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".foroActivity$PlaceholderFragment">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Foro"
-        android:id="@+id/foroText"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
-
 
     <ListView
         android:id="@+id/listview_foro"
         android:layout_width="match_parent"
-        android:layout_height="392dp"
-        android:layout_margin="17dp" />
+        android:layout_height="wrap_content"
+        />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </FrameLayout>

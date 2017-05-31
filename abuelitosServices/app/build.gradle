@@ -28,7 +28,31 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile project(path: ':backend', configuration: 'android-endpoints')
+    compile('com.squareup.okhttp:okhttp:2.5.0') {
+        exclude(module: 'org.apache.httpcomponents:httpclient')
+    }
+
+    compile('com.facebook.android:facebook-android-sdk:4.7.0') {
+        //App ID: 1504483209863550 || API Version: v2.5 || App Secret: f15b39d16df92985c99549077c50d6cc
+        exclude(module: 'org.apache.httpcomponents:httpclient')
+    }
+
+    compile(project(path: ':backend', configuration: 'android-endpoints')) {
+        exclude(module: 'guava-jdk5')
+        exclude(module: 'org.apache.httpcomponents:httpclient')
+    }
+
+    //HTTP Libraries
+    compile(group: 'com.google.http-client', name: 'google-http-client', version: '1.20.0') {
+        exclude(module: 'xpp3:xpp3')
+        exclude(module: 'org.apache.httpcomponents:httpclient')
+        exclude(module: 'junit:junit')
+        exclude(module: 'com.google.android:android')
+    }
+
+    compile(group: 'com.google.http-client', name: 'google-http-client-android', version: '1.20.0') {
+        exclude(module: 'org.apache.httpcomponents:httpclient')
+    }
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
     compile 'com.google.android.gms:play-services-location:10.2.0'
@@ -40,4 +64,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
+
 

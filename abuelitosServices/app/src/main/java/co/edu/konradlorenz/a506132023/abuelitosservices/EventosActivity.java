@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -25,12 +26,20 @@ public class EventosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_eventos);
+        setContentView(R.layout.activity_eventos);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.containerEvento, new EventosActivity.PlaceholderFragment())
                     .commit();
         }
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EventosActivity.this, AgregarForoActivity.class);
+                startActivity(intent);
+            }
+        });
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
 
@@ -112,7 +121,6 @@ public class EventosActivity extends AppCompatActivity {
             case R.id.itemMapa:
                 pushFragment(new MapsActivity.PlaceholderFragment());
                 break;
-
         }
     }
 
@@ -129,7 +137,6 @@ public class EventosActivity extends AppCompatActivity {
         if (fragmentManager != null) {
             android.app.FragmentTransaction ft = fragmentManager.beginTransaction();
             if (ft != null) {
-
                 ft.commit();
             }
         }
