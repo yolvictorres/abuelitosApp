@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -28,13 +29,24 @@ public class foroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_foro);
+        setContentView(R.layout.activity_foro);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.containerForo, new foroActivity.PlaceholderFragment())
                     .commit();
         }
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        selectFragment(item);
+                        return true;
+                    }
+                });
     }
 
     public static class PlaceholderFragment extends Fragment {
@@ -93,9 +105,10 @@ public class foroActivity extends AppCompatActivity {
 
         item.setChecked(true);
 
+
         switch (item.getItemId()) {
             case R.id.itemForo:
-                pushFragment(new PlaceholderFragment());
+                pushFragment(new foroActivity.PlaceholderFragment());
                 break;
             case R.id.itemEvento:
                 // Action to perform when Bag Menu item is selected.

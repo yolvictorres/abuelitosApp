@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 
-group = 'com.example.diego.myapplication.backend'
+group = 'co.edu.konradlorenz.a506132023.abuelitosservices.backend'
 archivesBaseName = 'userApi'
 version = 'v1-1.22.0-SNAPSHOT'
 

@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:descendantFocusability="blocksDescendants">
+    >
 
     <ImageView
         android:layout_width="65dp"
@@ -20,5 +20,6 @@
         android:gravity="center_vertical"
         android:id="@+id/list_item_evento_textview"
         android:layout_toRightOf="@+id/list_item_thumbnail"
-        android:layout_toEndOf="@+id/list_item_thumbnail" />
+        android:layout_toEndOf="@+id/list_item_thumbnail"
+        />
 </LinearLayout>

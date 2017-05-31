@@ -18,7 +18,7 @@ public class TemaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_tema);
+        setContentView(R.layout.activity_tema);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.containerTema, new TemaActivity.PlaceholderFragment())

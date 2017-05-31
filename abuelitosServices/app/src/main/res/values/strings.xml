@@ -10,4 +10,5 @@
     <string name="title_home">Eventos</string>
     <string name="title_dashboard">Foro</string>
     <string name="title_notifications">Mapa</string>
+    <string name="title_activity_prueba">pruebaActivity</string>
 </resources>
