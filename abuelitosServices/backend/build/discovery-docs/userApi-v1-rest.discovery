@@ -1,13 +1,13 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/SAugd4W69MFWvKH6UJgIBrK4XZM\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/PAsgG0XL5CCfqlaJmD_hu_xp4_Y\"",
  "discoveryVersion": "v1",
  "id": "userApi:v1",
  "name": "userApi",
  "version": "v1",
  "description": "This is an API",
- "ownerDomain": "backend.myapplication.Diego.example.com",
- "ownerName": "backend.myapplication.Diego.example.com",
+ "ownerDomain": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
+ "ownerName": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
  "icons": {
   "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
@@ -92,107 +92,68 @@
    "id": "User",
    "type": "object",
    "properties": {
-    "contrasena": {
+    "cedula": {
      "type": "string"
     },
-    "department": {
+    "contrasena": {
      "type": "string"
     },
     "foto": {
      "type": "string"
     },
-    "id": {
-     "type": "string"
-    },
-    "lastName": {
-     "type": "string"
-    },
-    "message": {
-     "type": "string"
-    },
     "name": {
      "type": "string"
     },
-    "state": {
-     "type": "string"
-    },
-    "status": {
-     "type": "string"
-    },
-    "typePeople": {
-     "type": "string"
-    },
-    "typePosition": {
-     "type": "string"
-    },
-    "typeUser": {
+    "tipoUser": {
      "type": "string"
     }
    }
   }
  },
  "methods": {
+  "clients": {
+   "id": "userApi.clients",
+   "path": "clients",
+   "httpMethod": "GET",
+   "parameters": {
+    "cursor": {
+     "type": "string",
+     "location": "query"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32",
+     "location": "query"
+    },
+    "tipoUser": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "tipoUser"
+   ],
+   "response": {
+    "$ref": "CollectionResponse_User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "get": {
    "id": "userApi.get",
-   "path": "user/{id}",
+   "path": "user/{cedula}",
    "httpMethod": "GET",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true,
      "location": "path"
     }
    },
    "parameterOrder": [
-    "id"
-   ],
-   "response": {
-    "$ref": "User"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "getTIUN": {
-   "id": "userApi.getTIUN",
-   "path": "unal/{id}",
-   "httpMethod": "GET",
-   "parameters": {
-    "id": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "id"
-   ],
-   "response": {
-    "$ref": "User"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "hola": {
-   "id": "userApi.hola",
-   "path": "sayhello/{documento}/{mensaje}",
-   "httpMethod": "GET",
-   "parameters": {
-    "documento": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    },
-    "mensaje": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "documento",
-    "mensaje"
+    "cedula"
    ],
    "response": {
     "$ref": "User"
@@ -238,19 +199,46 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
+  "login": {
+   "id": "userApi.login",
+   "path": "login",
+   "httpMethod": "POST",
+   "parameters": {
+    "clave": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "usuario": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "clave",
+    "usuario"
+   ],
+   "response": {
+    "$ref": "User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "patch": {
    "id": "userApi.patch",
-   "path": "user/{id}",
+   "path": "user/{cedula}",
    "httpMethod": "PATCH",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true,
      "location": "path"
     }
    },
    "parameterOrder": [
-    "id"
+    "cedula"
    ],
    "request": {
     "$ref": "User"
@@ -264,17 +252,17 @@
   },
   "remove": {
    "id": "userApi.remove",
-   "path": "user/{id}",
+   "path": "user/{cedula}",
    "httpMethod": "DELETE",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true,
      "location": "path"
     }
    },
    "parameterOrder": [
-    "id"
+    "cedula"
    ],
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
@@ -282,17 +270,17 @@
   },
   "update": {
    "id": "userApi.update",
-   "path": "user/{id}",
+   "path": "user/{cedula}",
    "httpMethod": "PUT",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true,
      "location": "path"
     }
    },
    "parameterOrder": [
-    "id"
+    "cedula"
    ],
    "request": {
     "$ref": "User",

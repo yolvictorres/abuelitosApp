@@ -1,0 +1,223 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/UVWCp-ubHmkHqZzegELMTvP2Fcw\"",
+ "discoveryVersion": "v1",
+ "id": "foroApi:v1",
+ "name": "foroApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
+ "ownerName": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://proyectoconstruccionesapp2.appspot.com/_ah/api/",
+ "rpcUrl": "https://proyectoconstruccionesapp2.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_Foro": {
+   "id": "CollectionResponse_Foro",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Foro"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Foro": {
+   "id": "Foro",
+   "type": "object",
+   "properties": {
+    "comentario": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "usuario": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "foroApi.get": {
+   "id": "foroApi.get",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "Foro"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "foroApi.insert": {
+   "id": "foroApi.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "Foro"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Foro"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "foroApi.list": {
+   "id": "foroApi.list",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    }
+   },
+   "returns": {
+    "$ref": "CollectionResponse_Foro"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "foroApi.patch": {
+   "id": "foroApi.patch",
+   "supportsPatch": true,
+   "parameters": {
+    "comentario": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "usuario": {
+     "type": "string"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "Foro"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "foroApi.remove": {
+   "id": "foroApi.remove",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "foroApi.update": {
+   "id": "foroApi.update",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "Foro"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "id"
+   ],
+   "returns": {
+    "$ref": "Foro"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

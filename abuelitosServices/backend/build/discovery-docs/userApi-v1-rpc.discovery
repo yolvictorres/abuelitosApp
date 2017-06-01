@@ -1,13 +1,13 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/SAugd4W69MFWvKH6UJgIBrK4XZM\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/PAsgG0XL5CCfqlaJmD_hu_xp4_Y\"",
  "discoveryVersion": "v1",
  "id": "userApi:v1",
  "name": "userApi",
  "version": "v1",
  "description": "This is an API",
- "ownerDomain": "backend.myapplication.Diego.example.com",
- "ownerName": "backend.myapplication.Diego.example.com",
+ "ownerDomain": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
+ "ownerName": "backend.abuelitosservices.a506132023.konradlorenz.edu.co",
  "icons": {
   "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
@@ -90,100 +90,62 @@
    "id": "User",
    "type": "object",
    "properties": {
-    "contrasena": {
+    "cedula": {
      "type": "string"
     },
-    "department": {
+    "contrasena": {
      "type": "string"
     },
     "foto": {
      "type": "string"
     },
-    "id": {
-     "type": "string"
-    },
-    "lastName": {
-     "type": "string"
-    },
-    "message": {
-     "type": "string"
-    },
     "name": {
      "type": "string"
     },
-    "state": {
-     "type": "string"
-    },
-    "status": {
-     "type": "string"
-    },
-    "typePeople": {
-     "type": "string"
-    },
-    "typePosition": {
-     "type": "string"
-    },
-    "typeUser": {
+    "tipoUser": {
      "type": "string"
     }
    }
   }
  },
  "methods": {
+  "userApi.clients": {
+   "id": "userApi.clients",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "tipoUser": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "tipoUser"
+   ],
+   "returns": {
+    "$ref": "CollectionResponse_User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "userApi.get": {
    "id": "userApi.get",
    "allowGet": true,
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true
     }
    },
    "parameterOrder": [
-    "id"
-   ],
-   "returns": {
-    "$ref": "User"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "userApi.getTIUN": {
-   "id": "userApi.getTIUN",
-   "allowGet": true,
-   "parameters": {
-    "id": {
-     "type": "string",
-     "required": true
-    }
-   },
-   "parameterOrder": [
-    "id"
-   ],
-   "returns": {
-    "$ref": "User"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "userApi.hola": {
-   "id": "userApi.hola",
-   "allowGet": true,
-   "parameters": {
-    "documento": {
-     "type": "string",
-     "required": true
-    },
-    "mensaje": {
-     "type": "string",
-     "required": true
-    }
-   },
-   "parameterOrder": [
-    "documento",
-    "mensaje"
+    "cedula"
    ],
    "returns": {
     "$ref": "User"
@@ -228,49 +190,51 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
+  "userApi.login": {
+   "id": "userApi.login",
+   "parameters": {
+    "clave": {
+     "type": "string",
+     "required": true
+    },
+    "usuario": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "clave",
+    "usuario"
+   ],
+   "returns": {
+    "$ref": "User"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "userApi.patch": {
    "id": "userApi.patch",
    "supportsPatch": true,
    "parameters": {
-    "contrasena": {
+    "cedula": {
      "type": "string"
     },
-    "department": {
+    "contrasena": {
      "type": "string"
     },
     "foto": {
      "type": "string"
     },
-    "id": {
-     "type": "string"
-    },
-    "lastName": {
-     "type": "string"
-    },
-    "message": {
-     "type": "string"
-    },
     "name": {
      "type": "string"
     },
-    "state": {
-     "type": "string"
-    },
-    "status": {
-     "type": "string"
-    },
-    "typePeople": {
-     "type": "string"
-    },
-    "typePosition": {
-     "type": "string"
-    },
-    "typeUser": {
+    "tipoUser": {
      "type": "string"
     }
    },
    "parameterOrder": [
-    "id"
+    "cedula"
    ],
    "returns": {
     "$ref": "User"
@@ -282,13 +246,13 @@
   "userApi.remove": {
    "id": "userApi.remove",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true
     }
    },
    "parameterOrder": [
-    "id"
+    "cedula"
    ],
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
@@ -297,7 +261,7 @@
   "userApi.update": {
    "id": "userApi.update",
    "parameters": {
-    "id": {
+    "cedula": {
      "type": "string",
      "required": true
     },
@@ -307,7 +271,7 @@
    },
    "parameterOrder": [
     "resource",
-    "id"
+    "cedula"
    ],
    "returns": {
     "$ref": "User"
