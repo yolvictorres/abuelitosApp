@@ -19,12 +19,16 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
+
+import co.edu.konradlorenz.a506132023.abuelitosservices.backend.userApi.model.User;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -49,23 +53,26 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         //new getByEscalafon(getApplicationContext()).execute(2);
-        //Button boton = (Button)findViewById(R.id.button);
-        /*boton.setOnClickListener(new View.OnClickListener() {
+        Button boton = (Button)findViewById(R.id.registroButton);
+        boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                EditText nombreCampo = (EditText)findViewById(R.id.nombreRegistro);
-                EditText cedulaCampo = (EditText)findViewById(R.id.cedulaRegistro);
-                EditText contrasenaCampo = (EditText)findViewById(R.id.contrasenaRegistro);
+                final EditText nombreCampo = (EditText)findViewById(R.id.nombreRegistro);
+                final EditText cedulaCampo = (EditText)findViewById(R.id.cedulaRegistro);
+                final EditText contrasenaCampo = (EditText)findViewById(R.id.contrasenaRegistro);
 
                 User unUsuario = new User();
 
-                unUsuario.setName(String.valueOf(nombreCampo.getText()));
-                unUsuario.setCedula(String.valueOf(cedulaCampo.getText()));
-                unUsuario.setContrasena(String.valueOf(contrasenaCampo.getText()));
-                new createUser(getApplicationContext()).execute((Runnable) unUsuario);
+                unUsuario.setName(String.valueOf(nombreCampo.getText().toString()));
+                unUsuario.setCedula(String.valueOf(cedulaCampo.getText().toString()));
+                unUsuario.setContrasena(String.valueOf(contrasenaCampo.getText().toString()));
+                //new createUser(getApplicationContext()).execute(unUsuario);
+                Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
+                startActivity(intent);
+
             }
-        });*/
+        });
 
             mSetImage = (ImageView) findViewById(R.id.set_picture);
             mOptionButton = (ImageButton) findViewById(R.id.FotoButton);

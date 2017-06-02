@@ -5,7 +5,19 @@ package co.edu.konradlorenz.a506132023.abuelitosservices;
  */
 
 
-/*import co.edu.konradlorenz.a506132023.abuelitosservices.backend.User;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+
+import java.io.IOException;
+
+import co.edu.konradlorenz.a506132023.abuelitosservices.backend.userApi.UserApi;
+import co.edu.konradlorenz.a506132023.abuelitosservices.backend.userApi.model.User;
 
 
 public class createUser extends AsyncTask<User, String, Boolean> {
@@ -31,7 +43,7 @@ public class createUser extends AsyncTask<User, String, Boolean> {
 
         }
 
-        /*try {
+        try {
 
             for (User usuario: usuarios){
                 myUserEndpointService.insert(usuario).execute();
@@ -39,10 +51,10 @@ public class createUser extends AsyncTask<User, String, Boolean> {
             ok=true;
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
 
-/*        return ok;
+             return ok;
     }
 
     @Override
@@ -52,15 +64,15 @@ public class createUser extends AsyncTask<User, String, Boolean> {
         pd = new ProgressDialog(context);
         pd.setMessage("Leyendo información");
         pd.setCancelable(false);
-        //pd.show();
+        pd.show();
     }
 
     @Override
     protected void onPostExecute(Boolean ok) {
         super.onPostExecute(ok);
         pd.dismiss();
-
+        Toast.makeText(context,"El usuario registrado",Toast.LENGTH_LONG).show();
         Log.i(TAG,"Todo esta ok: "+ ok);
     }
 
-}*/
+}

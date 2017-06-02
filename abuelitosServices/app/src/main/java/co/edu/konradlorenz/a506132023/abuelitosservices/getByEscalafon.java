@@ -18,7 +18,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-/*import co.edu.konradlorenz.a506132023.abuelitosservices.backend.User;
+import co.edu.konradlorenz.a506132023.abuelitosservices.backend.userApi.model.User;
 
 public class getByEscalafon extends AsyncTask<Integer, String, List<User>> {
 
@@ -54,7 +54,7 @@ public class getByEscalafon extends AsyncTask<Integer, String, List<User>> {
             e.printStackTrace();
         }*/
 
-/*
+
         return users;
     }
 
@@ -79,4 +79,4 @@ public class getByEscalafon extends AsyncTask<Integer, String, List<User>> {
         }
     }
 
-}*/
+}

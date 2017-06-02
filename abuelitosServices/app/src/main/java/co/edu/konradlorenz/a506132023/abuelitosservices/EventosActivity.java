@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class EventosActivity extends AppCompatActivity {
-
+    FloatingActionButton fab;
     private Intent intent;
 
     @Override
@@ -64,6 +64,7 @@ public class EventosActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
+
             // Es necesario definir una información dummy para la prueba, por favor agregue
             String[] data = {
                     "informacion de los eventos publicador",
@@ -91,6 +92,7 @@ public class EventosActivity extends AppCompatActivity {
                             R.layout.list_item_evento, // The name of the layout ID.
                             R.id.list_item_evento_textview, // The ID of the textview to populate.
                             eventoLista);
+
 
             View rootView = inflater.inflate(R.layout.fragment_evento, container, false);
 
